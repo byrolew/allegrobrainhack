@@ -1,0 +1,62 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    {% block title %}
+    <title>Frazomat</title>
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+    <meta name="author" content="Szalone Szczotki">
+    {% endblock title %}
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    
+  </head>
+  <body>
+    <div id="wrapper">
+      {% block header %}
+      <header class="container">
+	  <a id="main-page-btn" class="float-left" href="{% url 'main_page' %}">
+	      Logo
+	  </a>
+      </header>
+      {% endblock header%}
+      
+      {% block content %}
+      {% endblock content %}
+      
+      {% block footer %}
+      <footer class="container-fluid">
+	  <div class="row">
+	      <div class="col-lg-10 col-lg-offset-1 text-center">
+		  <p>
+		    Copyright &copy Szalone Szczotki
+		  </p>
+	      </div>
+	  </div>
+      </footer>
+      {% endblock footer %}
+    </div>
+    
+    <div id="csrf_token">{% csrf_token %}</div>
+    
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    {% block template_js %}
+    {% endblock template_js %}
+    
+  </body>
+</html>

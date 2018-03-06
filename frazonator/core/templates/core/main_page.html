@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block header %}
+{% endblock header%}
+
+{% block content %}
+<div class="container main-search">
+    <div class="text-center">
+	<a href="/"><h1 class='logo'>frazomat</h1></a>
+    </div>
+    <form id="search-form" class="input-form" method="POST" action="/">{% csrf_token %}
+	<button id="search-btn" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+	<span><input id="search-input" type="text" placeholder="Wpisz frazę..." name="q" autofocus autocomplete="off"></span>
+	<p class="error text-center">{{ err }}</p>
+    </form>
+    <div class="shadow"></div>
+</div>
+{% endblock content %}
+

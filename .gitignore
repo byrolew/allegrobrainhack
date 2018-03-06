@@ -1,0 +1,6 @@
+*.pyc
+frazonator/core/migrations/
+.DS_Store
+*.gz
+vectors.txt
+keywords_vectors.txt
